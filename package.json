@@ -1,0 +1,42 @@
+{
+  "name": "js-arrays",
+  "version": "0.0.1",
+  "description": "js arrays hexlet",
+  "engines": {
+    "node": ">=14"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "npx -n --experimental-vm-modules jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deputatov/js-arrays.git"
+  },
+  "keywords": [
+    "js",
+    "arrays",
+    "hexlet"
+  ],
+  "author": "Nikita Deputatov",
+  "license": "ISC",
+  "type": "module",
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  },
+  "bugs": {
+    "url": "https://github.com/deputatov/js-arrays/issues"
+  },
+  "homepage": "https://github.com/deputatov/js-arrays#readme",
+  "dependencies": {
+    "@jest/globals": "^26.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.1.0",
+    "jest-cli": "^26.1.0"
+  }
+}
