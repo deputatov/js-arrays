@@ -33,3 +33,11 @@ export const calculateSum = (coll) => {
     return acc;
   }, 0);
 };
+
+export const calculateAverage = (coll) => {
+  const len = coll.length;
+  if (len === 0) {
+    return null;
+  }
+  return coll.reduce((a, b) => a + b) / len;
+};

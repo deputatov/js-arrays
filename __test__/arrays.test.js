@@ -1,5 +1,5 @@
 import {
-  swap, get, addPrefix, reverse, calculateSum,
+  swap, get, addPrefix, reverse, calculateSum, calculateAverage,
 } from '../src/arrays.js';
 
 test('swap', () => {
@@ -83,5 +83,19 @@ test('calculate sum', () => {
 
   const coll = [];
   const actual3 = calculateSum(coll); // null
+  expect(actual3).toBeNull();
+});
+
+test('calculate average', () => {
+  const temperatures1 = [37.5, 34, 39.3, 40, 38.7, 41.5];
+  const actual1 = calculateAverage(temperatures1); // 38.5
+  expect(actual1).toBe(38.5);
+
+  const temperatures2 = [36, 37.4, 39, 41, 36.6];
+  const actual2 = calculateAverage(temperatures2); // 38
+  expect(actual2).toBe(38);
+
+  const temperatures = [];
+  const actual3 = calculateAverage(temperatures); // null
   expect(actual3).toBeNull();
 });
