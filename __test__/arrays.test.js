@@ -1,5 +1,5 @@
 import {
-  swap, get, addPrefix, reverse,
+  swap, get, addPrefix, reverse, calculateSum,
 } from '../src/arrays.js';
 
 test('swap', () => {
@@ -70,4 +70,18 @@ test('reverse', () => {
   const names4 = ['john', 'smith', 'karl', 'alan', 'joe'];
   reverse(names4);
   expect(names4).toEqual(['joe', 'alan', 'karl', 'smith', 'john']);
+});
+
+test('calculate sum', () => {
+  const coll1 = [8, 9, 21, 19, 18, 22, 7];
+  const actual1 = calculateSum(coll1); // 48
+  expect(actual1).toBe(48);
+
+  const coll2 = [2, 0, 17, 3, 9, 15, 4];
+  const actual2 = calculateSum(coll2); // 27
+  expect(actual2).toBe(27);
+
+  const coll = [];
+  const actual3 = calculateSum(coll); // null
+  expect(actual3).toBeNull();
 });

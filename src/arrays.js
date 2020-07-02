@@ -21,3 +21,15 @@ export const reverse = (arr) => {
     [arr[i], arr[lastIndex - i]] = [arr[lastIndex - i], arr[i]];
   }
 };
+
+export const calculateSum = (coll) => {
+  if (coll.length === 0) {
+    return null;
+  }
+  return coll.reduce((acc, e) => {
+    if (e % 3 === 0) {
+      return acc + e;
+    }
+    return acc;
+  }, 0);
+};
