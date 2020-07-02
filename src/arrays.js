@@ -18,7 +18,6 @@ export const reverse = (arr) => {
   const middleIndex = lastIndex / 2;
 
   for (let i = 0; i < middleIndex; i += 1) {
-    const mirrorIndex = lastIndex - i;
-    [arr[i], arr[mirrorIndex]] = [arr[mirrorIndex], arr[i]];
+    [arr[i], arr[lastIndex - i]] = [arr[lastIndex - i], arr[i]];
   }
 };
