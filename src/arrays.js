@@ -14,13 +14,11 @@ export const get = (arr, idx, def = null) => {
 export const addPrefix = (arr, prefix) => arr.map((e) => `${prefix} ${e}`);
 
 export const reverse = (arr) => {
-  if (arr.length !== 0) {
-    for (let i = 0; i <= Math.trunc((arr.length - 1) / 2); i += 1) {
-      const first = arr[i];
-      const last = arr[arr.length - 1 - i];
-      arr[i] = last;
-      arr[arr.length - 1 - i] = first;
-    }
+  const lastIndex = arr.length - 1;
+  const middleIndex = lastIndex / 2;
+
+  for (let i = 0; i < middleIndex; i += 1) {
+    const mirrorIndex = lastIndex - i;
+    [arr[i], arr[mirrorIndex]] = [arr[mirrorIndex], arr[i]];
   }
-  return arr;
 };
