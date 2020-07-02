@@ -1,12 +1,25 @@
-import { swap, get } from '../src/arrays.js';
+import {
+  swap, get, addPrefix, reverse,
+} from '../src/arrays.js';
 
 test('swap', () => {
   expect(swap([])).toEqual([]);
   expect(swap([1])).toEqual([1]);
   expect(swap([1, 2])).toEqual([2, 1]);
   expect(swap(['one', 'two', 'three'])).toEqual(['three', 'two', 'one']);
-  expect(swap(['one', 'two', 'three', 'four'])).toEqual(['four', 'two', 'three', 'one']);
-  expect(swap(['one', 'two', 'three', 'four', ''])).toEqual(['', 'two', 'three', 'four', 'one']);
+  expect(swap(['one', 'two', 'three', 'four'])).toEqual([
+    'four',
+    'two',
+    'three',
+    'one',
+  ]);
+  expect(swap(['one', 'two', 'three', 'four', ''])).toEqual([
+    '',
+    'two',
+    'three',
+    'four',
+    'one',
+  ]);
 });
 
 test('get', () => {
@@ -29,4 +42,32 @@ test('get', () => {
 
   const actual6 = get(cities, 4);
   expect(actual6).toBe('');
+});
+
+test('add prefix', () => {
+  const names = ['John', 'Mike', 'Karl'];
+
+  const actual1 = addPrefix(names, 'Mr');
+  expect(actual1).toEqual(['Mr John', 'Mr Mike', 'Mr Karl']);
+
+  const actual2 = addPrefix([], 'Mr');
+  expect(actual2).toEqual([]);
+});
+
+test('reverse', () => {
+  const names1 = ['john', 'smith', 'karl'];
+  reverse(names1);
+  expect(names1).toEqual(['karl', 'smith', 'john']);
+
+  const names2 = [];
+  reverse(names2);
+  expect(names2).toEqual([]);
+
+  const names3 = ['one', 'two'];
+  reverse(names3);
+  expect(names3).toEqual(['two', 'one']);
+
+  const names4 = ['john', 'smith', 'karl', 'alan', 'joe'];
+  reverse(names4);
+  expect(names4).toEqual(['joe', 'alan', 'karl', 'smith', 'john']);
 });
