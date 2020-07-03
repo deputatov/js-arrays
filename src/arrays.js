@@ -41,3 +41,11 @@ export const calculateAverage = (coll) => {
   }
   return coll.reduce((a, b) => a + b) / len;
 };
+
+export const getSameParity = (coll) => coll
+  .filter((value) => Math.abs(value) % 2 === Math.abs(coll[0]) % 2);
+
+export const getTotalAmount = (coll, cy) => coll
+  .filter((e) => e.includes(cy))
+  .map((e) => Number(e.slice(cy.length + 1)))
+  .reduce((a, b) => a + b);

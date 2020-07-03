@@ -1,5 +1,5 @@
 import {
-  swap, get, addPrefix, reverse, calculateSum, calculateAverage,
+  swap, get, addPrefix, reverse, calculateSum, calculateAverage, getSameParity, getTotalAmount,
 } from '../src/arrays.js';
 
 test('swap', () => {
@@ -86,16 +86,53 @@ test('calculate sum', () => {
   expect(actual3).toBeNull();
 });
 
-test('calculate average', () => {
-  const temperatures1 = [37.5, 34, 39.3, 40, 38.7, 41.5];
-  const actual1 = calculateAverage(temperatures1); // 38.5
-  expect(actual1).toBe(38.5);
+describe('calculate average', () => {
+  test('calculate', () => {
+    const temperatures1 = [37.5, 34, 39.3, 40, 38.7, 41.5];
+    const actual1 = calculateAverage(temperatures1); // 38.5
+    expect(actual1).toBe(38.5);
 
-  const temperatures2 = [36, 37.4, 39, 41, 36.6];
-  const actual2 = calculateAverage(temperatures2); // 38
-  expect(actual2).toBe(38);
+    const temperatures2 = [36, 37.4, 39, 41, 36.6];
+    const actual2 = calculateAverage(temperatures2); // 38
+    expect(actual2).toBe(38);
+  });
+  test('should be null', () => {
+    const temperatures = [];
+    const actual3 = calculateAverage(temperatures); // null
+    expect(actual3).toBeNull();
+  });
+});
 
-  const temperatures = [];
-  const actual3 = calculateAverage(temperatures); // null
-  expect(actual3).toBeNull();
+test('get same parity', () => {
+  const result1 = getSameParity([1, 2, 3]);
+  expect(result1).toEqual([1, 3]);
+
+  const result2 = getSameParity([1, 2, 8]);
+  expect(result2).toEqual([1]);
+
+  const result3 = getSameParity([2, 3, 8]);
+  expect(result3).toEqual([2, 8]);
+
+  const result4 = getSameParity([1, 2, -3]);
+  expect(result4).toEqual([1, -3]);
+
+  const result5 = getSameParity([-3, 2, 1]);
+  expect(result5).toEqual([-3, 1]);
+
+  const result6 = getSameParity([]);
+  expect(result6).toEqual([]);
+});
+
+test('get total amount', () => {
+  const money1 = ['eur 10', 'usd 1', 'usd 10', 'rub 50', 'usd 5'];
+  const result1 = getTotalAmount(money1, 'usd'); // 16
+  expect(result1).toBe(16);
+
+  const money2 = ['eur 10', 'usd 1', 'eur 5', 'rub 100', 'eur 20', 'eur 100', 'rub 200'];
+  const result2 = getTotalAmount(money2, 'eur'); // 135
+  expect(result2).toBe(135);
+
+  const money3 = ['eur 10', 'rub 50', 'eur 5', 'rub 10', 'rub 10', 'eur 100', 'rub 200'];
+  const result3 = getTotalAmount(money3, 'rub'); // 270
+  expect(result3).toBe(270);
 });
