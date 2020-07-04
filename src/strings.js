@@ -14,3 +14,5 @@ export const makeCensored = (sentence, censors) => sentence
     return word;
   })
   .join(' ');
+
+export const countUniqChars = (text) => new Set(text.split('')).size;
