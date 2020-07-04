@@ -4,3 +4,13 @@ export const buildDefinitionList = (definitions) => {
   }
   return `<dl>${definitions.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>`;
 };
+
+export const makeCensored = (sentence, censors) => sentence
+  .split(' ')
+  .map((word) => {
+    if (censors.includes(word)) {
+      return '$#%!';
+    }
+    return word;
+  })
+  .join(' ');
