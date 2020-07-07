@@ -1,5 +1,5 @@
 import {
-  buildDefinitionList, makeCensored, countUniqChars, isBracketStructureBalanced
+  buildDefinitionList, makeCensored, countUniqChars, isBracketStructureBalanced,
 } from '../src/strings.js';
 
 it('StringsTest', () => {
