@@ -49,3 +49,6 @@ export const getTotalAmount = (coll, cy) => coll
   .filter((e) => e.includes(cy))
   .map((e) => Number(e.slice(cy.length + 1)))
   .reduce((a, b) => a + b);
+
+export const getIntersectionOfSortedArrays = (arr1, arr2) => arr1
+  .reduce((acc, v) => (arr2.includes(v) ? [...acc, v] : acc), []);
