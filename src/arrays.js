@@ -52,3 +52,6 @@ export const getTotalAmount = (coll, cy) => coll
 
 export const getIntersectionOfSortedArrays = (arr1, arr2) => arr1
   .reduce((acc, v) => (arr2.includes(v) ? [...acc, v] : acc), []);
+
+export const flatten = (arr) => arr
+  .reduce((res, v) => (Array.isArray(v) ? [...res, ...v] : [...res, v]), []);
