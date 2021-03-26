@@ -1,7 +1,6 @@
 # js arrays hexlet
 
 ![Node CI](https://github.com/deputatov/js-arrays/workflows/Node%20CI/badge.svg?branch=master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/5f166eaf05841e743c43/maintainability)](https://codeclimate.com/github/deputatov/js-arrays/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/5f166eaf05841e743c43/test_coverage)](https://codeclimate.com/github/deputatov/js-arrays/test_coverage)
 
 - Array manipulation
