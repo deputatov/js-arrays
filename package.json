@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "npx -n --experimental-vm-modules jest"
+    "test": "npx jest"
   },
   "repository": {
     "type": "git",
@@ -22,22 +22,22 @@
   "license": "ISC",
   "type": "module",
   "jest": {
-    "testEnvironment": "node",
-    "transform": {}
+    "testEnvironment": "node"
   },
   "bugs": {
     "url": "https://github.com/deputatov/js-arrays/issues"
   },
   "homepage": "https://github.com/deputatov/js-arrays#readme",
-  "dependencies": {
-    "@jest/globals": "^26.1.0"
-  },
   "devDependencies": {
+    "@jest/globals": "^26.6.2",
     "eslint": "^7.3.1",
     "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.17.1",
+    "eslint-plugin-prettier": "^3.3.1",
     "jest": "^26.1.0",
-    "jest-cli": "^26.1.0"
+    "jest-cli": "^26.1.0",
+    "prettier": "^2.2.1"
   }
 }

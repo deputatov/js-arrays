@@ -9,7 +9,7 @@ import {
   getTotalAmount,
   getIntersectionOfSortedArrays,
   flatten,
-} from '../src/arrays.js';
+} from '../src/arrays';
 
 test('swap', () => {
   expect(swap([])).toEqual([]);
@@ -137,11 +137,27 @@ test('get total amount', () => {
   const result1 = getTotalAmount(money1, 'usd'); // 16
   expect(result1).toBe(16);
 
-  const money2 = ['eur 10', 'usd 1', 'eur 5', 'rub 100', 'eur 20', 'eur 100', 'rub 200'];
+  const money2 = [
+    'eur 10',
+    'usd 1',
+    'eur 5',
+    'rub 100',
+    'eur 20',
+    'eur 100',
+    'rub 200',
+  ];
   const result2 = getTotalAmount(money2, 'eur'); // 135
   expect(result2).toBe(135);
 
-  const money3 = ['eur 10', 'rub 50', 'eur 5', 'rub 10', 'rub 10', 'eur 100', 'rub 200'];
+  const money3 = [
+    'eur 10',
+    'rub 50',
+    'eur 5',
+    'rub 10',
+    'rub 10',
+    'eur 100',
+    'rub 200',
+  ];
   const result3 = getTotalAmount(money3, 'rub'); // 270
   expect(result3).toBe(270);
 });
@@ -168,7 +184,10 @@ describe('getIntersectionOfSortedArrays', () => {
   });
 
   it('test 5', () => {
-    const actual = getIntersectionOfSortedArrays([10, 11, 24], [10, 13, 14, 18, 24, 30]);
+    const actual = getIntersectionOfSortedArrays(
+      [10, 11, 24],
+      [10, 13, 14, 18, 24, 30]
+    );
     expect(actual).toEqual([10, 24]);
   });
 

@@ -1,6 +1,9 @@
 import {
-  buildDefinitionList, makeCensored, countUniqChars, isBracketStructureBalanced,
-} from '../src/strings.js';
+  buildDefinitionList,
+  makeCensored,
+  countUniqChars,
+  isBracketStructureBalanced,
+} from '../src/strings';
 
 it('StringsTest', () => {
   const definitions1 = [
@@ -9,7 +12,8 @@ it('StringsTest', () => {
   ];
 
   const actual1 = buildDefinitionList(definitions1);
-  const expected1 = '<dl><dt>key</dt><dd>value</dd><dt>key2</dt><dd>value2</dd></dl>';
+  const expected1 =
+    '<dl><dt>key</dt><dd>value</dd><dt>key2</dt><dd>value2</dd></dl>';
   expect(actual1).toBe(expected1);
 
   const actual2 = buildDefinitionList([]);

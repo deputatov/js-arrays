@@ -1,4 +1,4 @@
-import { getWeekends } from '../src/dates.js';
+import { getWeekends } from '../src/dates';
 
 test('weekends', () => {
   expect(getWeekends()).toEqual(['saturday', 'sunday']);

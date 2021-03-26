@@ -1,4 +1,5 @@
 /* eslint-disable no-param-reassign */
+
 export const swap = (arr) => {
   if (arr.length < 2) return arr;
   return [arr[arr.length - 1], ...arr.slice(1, arr.length - 1), arr[0]];
@@ -42,16 +43,17 @@ export const calculateAverage = (coll) => {
   return coll.reduce((a, b) => a + b) / len;
 };
 
-export const getSameParity = (coll) => coll
-  .filter((value) => Math.abs(value) % 2 === Math.abs(coll[0]) % 2);
+export const getSameParity = (coll) =>
+  coll.filter((value) => Math.abs(value) % 2 === Math.abs(coll[0]) % 2);
 
-export const getTotalAmount = (coll, cy) => coll
-  .filter((e) => e.includes(cy))
-  .map((e) => Number(e.slice(cy.length + 1)))
-  .reduce((a, b) => a + b);
+export const getTotalAmount = (coll, cy) =>
+  coll
+    .filter((e) => e.includes(cy))
+    .map((e) => Number(e.slice(cy.length + 1)))
+    .reduce((a, b) => a + b);
 
-export const getIntersectionOfSortedArrays = (arr1, arr2) => arr1
-  .reduce((acc, v) => (arr2.includes(v) ? [...acc, v] : acc), []);
+export const getIntersectionOfSortedArrays = (arr1, arr2) =>
+  arr1.reduce((acc, v) => (arr2.includes(v) ? [...acc, v] : acc), []);
 
-export const flatten = (arr) => arr
-  .reduce((res, v) => (Array.isArray(v) ? [...res, ...v] : [...res, v]), []);
+export const flatten = (arr) =>
+  arr.reduce((res, v) => (Array.isArray(v) ? [...res, ...v] : [...res, v]), []);

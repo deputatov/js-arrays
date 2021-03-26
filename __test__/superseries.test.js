@@ -1,4 +1,4 @@
-import { getSuperSeriesWinner } from '../src/superseries.js';
+import { getSuperSeriesWinner } from '../src/superseries';
 
 test('super series 1', () => {
   const scores = [

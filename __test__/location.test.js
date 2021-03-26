@@ -1,4 +1,4 @@
-import { getTheNearestLocation } from '../src/location.js';
+import { getTheNearestLocation } from '../src/location';
 
 test('getTheNearestLocation', () => {
   const locations = [
